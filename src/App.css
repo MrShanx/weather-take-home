@@ -1,0 +1,39 @@
+.app {
+	height: 100%;
+	width: 100%;
+	min-width: 300px;
+	display: flex;
+	flex-flow: column wrap;
+	align-content: center;
+	color: rgba(255,255,255, 1);
+}
+
+.app-content {
+	padding: 10px;
+}
+
+h1, h3, p {
+	text-align: center;
+}
+
+h1 {
+	margin-top: -0.5px;
+}
+
+.default-background {
+	background: linear-gradient(to right, #fca4a5, #067327);
+}
+
+.moon-background {
+	background-color: rgb(3, 20, 39);
+	background-image:
+		radial-gradient(white, rgba(255,255,255,.2) 2px, transparent 0px),
+		radial-gradient(white, rgba(255,255,255,.15) 1px, transparent 0px),
+		radial-gradient(white, rgba(255,255,255,.1) 2px, transparent 0px),
+		radial-gradient(rgba(255,255,255,.2), rgba(255,255,255,.1) 2px, transparent 0px);
+	background-size: 550px 550px, 350px 350px, 250px 250px, 150px 150px; 
+}
+
+.sun-background {
+	background: linear-gradient(#ebc030, #0080ff);
+}
