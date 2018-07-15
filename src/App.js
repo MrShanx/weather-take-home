@@ -76,8 +76,8 @@ class App extends Component {
 		const { city, description, clouds, rain, sunset, current, max, min, image, buttonClicked } = this.state;
 		
 		let day = new Date().getTime();
-		let dayString = day.toString().substr(0,10);
-		let dayNum = parseInt(dayString, 10);
+		let dayString = day.toString().substr(0, 10);
+		let dayNum = parseInt(dayString, 10) + 85000;
 
 		let timeOfTheDay ="NONE";
 		if(dayNum <= sunset && sunset !== '') {
@@ -103,16 +103,18 @@ class App extends Component {
 					    		? (
 					    			<h1>Loading...</h1>
 					    		) : (
-						    			<CityWeather 
-							    		city={city}
-							    		description={description}
-							    		clouds={clouds}
-							    		rain={rain}
-							    		sunset={sunset}
-							    		current={current}
-							    		max={max}
-							    		min={min}
-							    		image={image} />
+					    				<div className="weather-content">
+							    			<CityWeather 
+								    		city={city}
+								    		description={description}
+								    		clouds={clouds}
+								    		rain={rain}
+								    		sunset={sunset}
+								    		current={current}
+								    		max={max}
+								    		min={min}
+								    		image={image} />
+								    	</div>
 						    	)	
 					    	}	
 					    </div>
