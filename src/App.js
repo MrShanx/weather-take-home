@@ -76,10 +76,9 @@ class App extends Component {
 		const { city, description, clouds, rain, sunset, current, max, min, image, buttonClicked } = this.state;
 		
 		let day = new Date().getTime();
-		let dayString = day.toString().substr(0, 10);
-		let dayNum = parseInt(dayString, 10) + 85000;
-
+		let dayNum = parseInt(day, 10) * 0.001; //milliseconds to seconds coversion
 		let timeOfTheDay ="NONE";
+		
 		if(dayNum <= sunset && sunset !== '') {
 			timeOfTheDay = 'sun-background';
 		} else if(dayNum > sunset && sunset !== '') {
@@ -93,7 +92,7 @@ class App extends Component {
 					<div className="" id="clouds">
 					<div className="" id="rain">
 						<div className="app-content">
-					    	<h1>REACT WEATHER</h1>
+					    	<h2>REACT WEATHER</h2>
 					    	<CityNavigation onCityClick={this.onCityClick} />
 					    	{
 					    		!buttonClicked

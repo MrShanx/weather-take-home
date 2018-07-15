@@ -3,8 +3,7 @@ import './CityWeather.css';
 
 const CityWeather = ({ city, description, clouds, rain, sunset, current, max, min, image }) => {
 	let day = new Date().getTime();
-	let dayString = day.toString().substr(0,10);
-	let dayNum = parseInt(dayString, 10) + 85000;
+	let dayNum = parseInt(day, 10) * 0.001; //milliseconds to seconds coversion
 
 	let star;
 	if(dayNum < sunset) {
